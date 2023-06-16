@@ -36,7 +36,7 @@ const config: webpack.Configuration = {
     extensions: ['.tsx', '.ts', '.js'],
   },
   output: {
-    filename: 'assets/js/[name].bundle.js',
+    filename: 'js/[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
   },
   plugins: [
@@ -45,7 +45,7 @@ const config: webpack.Configuration = {
         template: 'src/index.html' 
     }),
     new MiniCssExtractPlugin({
-      filename: 'assets/css/[name].css',
+      filename: 'css/[name].css',
     }),
     new CopyPlugin({
       patterns: [

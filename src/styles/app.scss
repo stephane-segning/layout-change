@@ -1,21 +1,44 @@
 #wrapper, .element-main {
+    // The display flex is required to use the order property
     display: flex;
+
+    // The gap is the space between the elements. It is not required but it is recommended
+    gap: 1rem;
 }
 
 #wrapper {
+    // The flex-direction is required to use the order property correctly
     flex-direction: column;
-    gap: 1rem;
 }
 
 .element-description, .element-footer, .element-main, .element-title {
     margin: 0;
     padding: .75rem;
-    border: 1px solid red;
     border-radius: 4px;
+    border: 1px solid;
+}
+
+.element-description {
+    background-color: aliceblue;
+    border-color: blue;
+}
+
+.element-footer {
+    background-color: lightgreen;
+    border-color: green;
+}
+
+
+.element-title {
+    background-color: lightpink;
+    border-color: red;
 }
 
 .element-main {
-    display: flex;
+    background-color: lightyellow;
+    border-color: yellow;
+
+    // The flex-direction is required to use the order property correctly
     flex-direction: row;    
     justify-content: space-between;
     align-items: center;

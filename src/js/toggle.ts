@@ -1,13 +1,18 @@
+// Note: Toggle between Neva and Supra layouts
 export type LayoutType = 'neva' | 'supra' | null | undefined;
+
+// Note: Key for local storage
 const key = 'layout';
 
-
+// Note: Toggle between Neva and Supra layouts
 export function changeLayoutClass(value?: LayoutType) {
+    // Get the body element
     const body = document.querySelector('body');
     if (body === null) {
         return;
     }
 
+    // If value is set, then set the class
     if (value) {
         body.classList.remove('neva');
         body.classList.remove('supra');
@@ -21,9 +26,11 @@ export function changeLayoutClass(value?: LayoutType) {
 
     localStorage.setItem('app-' + key, body.classList.contains('neva') ? 'neva' : 'supra');
     
+    // Set the select value
     setSelectValue();
 }
 
+// Note: Load layout class from local storage
 export function loadLayoutClass() {
     let currentState = localStorage.getItem('app-' + key) as LayoutType;
     if (!currentState) {
@@ -37,9 +44,11 @@ export function loadLayoutClass() {
     
     body.classList.add(currentState);
 
+    // Set the select value
     setSelectValue();
 }
 
+// Note: Set the select value
 export function setSelectValue() {
     let currentState = localStorage.getItem('app-' + key) as LayoutType;
     if (!currentState) {
