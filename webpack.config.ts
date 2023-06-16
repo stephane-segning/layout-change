@@ -59,6 +59,7 @@ const config: webpack.Configuration = {
     port: 4000,
   },
   optimization: {
+    minimize: true,
     minimizer: [
       new CssMinimizerPlugin(),
       new TerserPlugin()

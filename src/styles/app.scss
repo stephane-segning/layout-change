@@ -44,6 +44,13 @@
     align-items: center;
 }
 
+@media screen and (max-width: 768px) {
+    .element-main {
+        // The flex-direction is required to use the order property correctly
+        flex-direction: column;
+    }    
+}
+
 // Business part
 .neva {
     .element-title {
