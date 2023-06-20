@@ -9,7 +9,7 @@ import 'webpack-dev-server';
 
 const config: webpack.Configuration = {
   devtool: 'source-map',
-  entry: ['./src/js/app.ts', './src/styles/app.scss'],
+  entry: ['./src/js/app.ts', './src/js/bootstrap-modal.ts', './src/styles/app.scss'],
   module: {
     rules: [
       {
@@ -36,7 +36,7 @@ const config: webpack.Configuration = {
     extensions: ['.tsx', '.ts', '.js'],
   },
   output: {
-    filename: 'js/[name].bundle.js',
+    filename: 'js/[name]-[hash].bundle.js',
     path: path.resolve(__dirname, 'dist'),
   },
   plugins: [
@@ -51,6 +51,10 @@ const config: webpack.Configuration = {
       patterns: [
         { from: "src/assets", to: "assets" }
       ]
+    }),
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery"
     }),
   ],
   devServer: {
